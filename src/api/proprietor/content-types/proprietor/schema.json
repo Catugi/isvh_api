@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proprietors",
+  "info": {
+    "singularName": "proprietor",
+    "pluralName": "proprietors",
+    "displayName": "proprietor",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fname": {
+      "type": "string"
+    },
+    "sname": {
+      "type": "string"
+    },
+    "lname": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "proprieties": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::propriety.propriety"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "proprietor"
+    },
+    "bday": {
+      "type": "date"
+    }
+  }
+}

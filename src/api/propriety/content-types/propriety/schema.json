@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proprieties",
+  "info": {
+    "singularName": "propriety",
+    "pluralName": "proprieties",
+    "displayName": "propriety",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "products": {
+      "type": "string"
+    },
+    "deseases": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::desease.desease",
+      "inversedBy": "proprieties"
+    }
+  }
+}
